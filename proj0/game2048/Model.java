@@ -168,7 +168,7 @@ public class Model extends Observable {
         }
         return changed;
     }
-    
+
     /** Checks if the game is over and sets the gameOver variable
      *  appropriately.
      */
