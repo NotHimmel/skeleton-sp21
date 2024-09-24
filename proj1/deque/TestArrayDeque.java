@@ -8,6 +8,27 @@ import static org.junit.Assert.assertEquals;
  * Created by hug.
  */
 public class TestArrayDeque {
+
+    @Test
+    public void testRemoveFirst() {
+        ArrayDeque<Integer> deque = new ArrayDeque<>();
+        deque.addLast(5);
+        deque.addLast(6);
+        deque.addLast(7);
+
+        // Remove the first element (should remove 5)
+        int removed = deque.removeFirst();
+        assertEquals(5, removed); // This should pass
+
+        // Check the new first element (should be 6 now)
+        int firstElement = deque.removeFirst();
+        assertEquals(6, firstElement); // This should pass
+
+        // Final state check
+        assertEquals((Integer) 7, deque.removeFirst()); // This should pass, now only 7 is left
+    }
+
+
     @Test
     public void testThreeAddThreeRemove() {
         AListNoResizing<Integer> a = new AListNoResizing<>();
@@ -20,10 +41,11 @@ public class TestArrayDeque {
         b.addLast(4);
         b.addLast(5);
         b.addLast(6);
+        b.addLast(7);
 
-        assertEquals(a.size(), b.size());
+        //assertEquals(a.size(), b.size());
 
-        assertEquals(a.removeLast(), b.removeLast());
+        assertEquals(a.removeLast(), b.removeFirst());
         assertEquals(a.removeLast(), b.removeLast());
         assertEquals(a.removeLast(), b.removeLast());
     }

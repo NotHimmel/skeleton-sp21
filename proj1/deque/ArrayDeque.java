@@ -76,7 +76,13 @@ public class ArrayDeque<T> implements Deque<T>{
         if (size == 0)
             return null;
         T t = items[0];
+
+        for (int i = 0; i < size - 1; i++) {
+            items[i] = items[i+1];
+        }
+        items[size-1] = null;
         size--;
+
         return t;
     }
 
