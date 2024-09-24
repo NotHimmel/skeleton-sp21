@@ -12,7 +12,7 @@ public class ArrayDeque<T> implements Deque<T>{
     public ArrayDeque() {
         front = -1;
         back = -1;
-        capacity = 8;
+        capacity = 2;
         items = (T[])new Object[capacity];
         loadFactor = 0.75;
         size = 0;
@@ -51,8 +51,8 @@ public class ArrayDeque<T> implements Deque<T>{
             back = 1;
             front = 0;
         } else {
-            for (int i = back; i > front; i--) {
-                items[i] = items[i - 1];
+            for (int i = back; i >= front; i--) {
+                items[i+1] = items[i];
             }
             back++;
         }
