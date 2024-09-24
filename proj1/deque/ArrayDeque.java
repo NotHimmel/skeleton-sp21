@@ -18,6 +18,10 @@ public class ArrayDeque<T> implements Deque<T>{
         size = 0;
     }
 
+    public int size() {
+        return size;
+    }
+
     public void reSize() {
         if ((size + 1) >= (loadFactor * capacity)) {
             capacity *= 2;

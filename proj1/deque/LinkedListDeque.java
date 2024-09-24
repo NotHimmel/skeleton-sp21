@@ -21,7 +21,9 @@ public class LinkedListDeque<T> implements Deque<T>{
         size = 0;
     }
 
-
+    public int size() {
+        return size;
+    }
 
     public void printDeque() {
         ItemNode<T> p = sentinel;
