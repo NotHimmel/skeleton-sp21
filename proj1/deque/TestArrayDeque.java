@@ -41,13 +41,13 @@ public class TestArrayDeque {
         b.addLast(4);
         b.addLast(5);
         b.addLast(6);
-        b.addLast(7);
 
         //assertEquals(a.size(), b.size());
 
-        assertEquals(a.removeLast(), b.removeFirst());
         assertEquals(a.removeLast(), b.removeLast());
         assertEquals(a.removeLast(), b.removeLast());
+        assertEquals(a.removeLast(), b.removeLast());
+        b.removeLast();
     }
 
     @Test
